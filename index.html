@@ -12,6 +12,16 @@
         Loading Awareness...
       </div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.onerror = function(msg, url, line, col, error) {
+        var root = document.getElementById('root');
+        root.innerHTML = '<div style="color: white; padding: 20px; background: darkred;">' +
+          '<h3>Critical Script Error</h3>' +
+          '<p>' + msg + '</p>' +
+          '<p>URL: ' + url + '</p>' +
+          '</div>';
+      };
+    </script>
+    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>

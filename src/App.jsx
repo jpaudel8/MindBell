@@ -734,3 +734,40 @@ const CSS = `
   }
 `;
 
+
+  /* ── Ripple: expanding ring that fades out ── */
+  @keyframes ripple {
+    0%   { transform: scale(1);   opacity: 0.55; }
+    100% { transform: scale(2.7); opacity: 0; }
+  }
+
+  .ripple {
+    position: absolute;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid var(--rc, #4a8ab0);
+    box-shadow: 0 0 6px var(--rc, #4a8ab0);
+    animation: ripple 2.6s ease-out forwards;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Idle: slow meditative breathing ── */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.026); }
+  }
+  .orb-breathe {
+    animation: breathe 3.6s ease-in-out infinite;
+  }
+
+  /* ── Escalating: faster, more insistent pulse ── */
+  @keyframes orb-pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.072); }
+  }
+  .orb-pulse {
+    animation: orb-pulse var(--ps, 1.2s) ease-in-out infinite;
+  }
+`;
+
