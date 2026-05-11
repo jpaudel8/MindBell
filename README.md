@@ -1,16 +1,28 @@
-# React + Vite
+# Awareness: Mindful Attention Recovery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist biofeedback tool designed to help you notice and recover from mind-wandering.
 
-Currently, two official plugins are available:
+## How it works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1.  **Silence:** The session begins with a period of silence.
+2.  **Escalation:** Tibetan singing bowl sounds gradually emerge and grow in intensity, complexity, and dissonance.
+3.  **Awareness:** The moment you notice the sound (recovering from mind-wandering), touch the central orb.
+4.  **Adaptation:** The system learns your rhythm. If you acknowledge quickly, the silent interval lengthens. If you take longer, it shortens.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19**
+- **Vite**
+- **Web Audio API** (Additive synthesis for singing bowl sounds)
+- **GitHub Actions** (Automated deployment)
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Deployment
+
+Pushes to `main` are automatically deployed to GitHub Pages via GitHub Actions.

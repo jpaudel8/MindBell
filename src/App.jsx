@@ -230,21 +230,21 @@ const Esc = {
 const Mem = {
   KEY:     'awareness_app_v2',
   TARGET:  0.33,   // ideal escalation level at acknowledgment
-  DEFAULT: 10,     // initial silent interval in seconds
+  DEFAULT: 60,     // initial silent interval in seconds
 
   blank: () => ({ sessions: [], silence: Mem.DEFAULT }),
 
   async load() {
     try {
-      const r = await window.storage.get(Mem.KEY);
-      return r ? JSON.parse(r.value) : Mem.blank();
+      const r = localStorage.getItem(Mem.KEY);
+      return r ? JSON.parse(r) : Mem.blank();
     } catch {
       return Mem.blank();
     }
   },
 
   async save(d) {
-    try { await window.storage.set(Mem.KEY, JSON.stringify(d)); } catch {}
+    try { localStorage.setItem(Mem.KEY, JSON.stringify(d)); } catch {}
   },
 
   integrate(data, { level, timeToAck, silence }) {
@@ -735,3 +735,4 @@ const CSS = `
     animation: orb-pulse var(--ps, 1.2s) ease-in-out infinite;
   }
 `;
+
